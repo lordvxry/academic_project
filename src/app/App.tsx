@@ -1,18 +1,23 @@
-import React from 'react';
-import './styles/index.scss'
-import {useTheme} from 'app/providers/ThemeProvider';
-import {classNames} from 'shared/lib/classNames/classNames';
-import {AppRouter} from 'app/providers/router';
-import {Navbar} from 'widgets/Navbar';
+import React, { FC, Suspense } from 'react';
+import './styles/index.scss';
+import { useTheme } from 'app/providers/ThemeProvider';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { AppRouter } from 'app/providers/router';
+import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/SideBar';
 
-const App = () => {
-    const {theme, toggleTheme} = useTheme();
+const App: FC = () => {
+    const { theme = '' } = useTheme();
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Navbar />
-            <AppRouter />
-            <button onClick={toggleTheme}>CHANGE THEME</button>
+            <Suspense fallback=''>
+                <Navbar />
+                <div className='content-page'>
+                    <Sidebar />
+                    <AppRouter />
+                </div>
+            </Suspense>
         </div>
     );
 };

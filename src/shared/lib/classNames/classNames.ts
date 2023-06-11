@@ -1,4 +1,4 @@
-type Modes = Record<string, boolean | string>;
+type Modes = Record<string, boolean | string>
 
 export const classNames = (className: string, modes: Modes = {}, additional: string[] = []): string => {
     return [
@@ -7,5 +7,5 @@ export const classNames = (className: string, modes: Modes = {}, additional: str
         Object.keys(modes)
             .filter(key => modes[key])
     ]
-        .join(' ')
+        .join(' ');
 };

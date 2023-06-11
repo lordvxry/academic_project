@@ -1,6 +1,6 @@
-import {FC} from 'react';
-import {Link, LinkProps} from 'react-router-dom';
-import {classNames} from 'shared/lib/classNames/classNames';
+import { type FC } from 'react';
+import { Link, type LinkProps } from 'react-router-dom';
+import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './AppLink.module.scss';
 
 export enum AppLinkTheme {
@@ -8,15 +8,15 @@ export enum AppLinkTheme {
     INVERTED = 'inverted',
 }
 
-interface AppLinkProps extends LinkProps{
-    className?: string;
-    theme?: AppLinkTheme;
+interface AppLinkProps extends LinkProps {
+    className?: string
+    theme?: AppLinkTheme
 }
 
 export const AppLink: FC<AppLinkProps> = (props) => {
     const {
         to,
-        className,
+        className = '',
         children,
         theme = AppLinkTheme.PRIMARY,
         ...otherProps
