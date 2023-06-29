@@ -1,9 +1,14 @@
 module.exports = {
     env: {
         browser: true,
-        es2021: true
+        es2021: true,
+        jest: true
     },
-    extends: ['standard-with-typescript', 'plugin:react/recommended', 'plugin:i18next/recommended'],
+    extends: [
+        'standard-with-typescript',
+        'plugin:react/recommended',
+        'plugin:i18next/recommended'
+    ],
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
@@ -23,6 +28,7 @@ module.exports = {
         semi: ['error', 'always'],
         '@typescript-eslint/semi': 'off',
         '@typescript-eslint/prefer-nullish-coalescing': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }]
+        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'max-len': ['error', { ignoreComments: true }]
     }
 };
