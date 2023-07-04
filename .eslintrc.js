@@ -28,7 +28,20 @@ module.exports = {
         semi: ['error', 'always'],
         '@typescript-eslint/semi': 'off',
         '@typescript-eslint/prefer-nullish-coalescing': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
-        'max-len': ['error', { ignoreComments: true }]
-    }
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true,
+                ignoreAttribute: ['data-testid']
+            }],
+        'max-len': ['error', { ignoreComments: true, code: 100 }]
+    },
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off'
+            }
+        }
+    ]
 };
