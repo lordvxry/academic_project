@@ -4,7 +4,7 @@ import cls from './PageError.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
 
-export const PagerError: FC = () => {
+export const PageError: FC = () => {
     const { t } = useTranslation();
 
     const reloadPage = () => {

@@ -5,11 +5,11 @@ import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { Button } from 'shared/ui/Button/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 
-interface SideBarProps {
+interface SidebarProps {
     className?: string
 }
 
-export const Sidebar: FC<SideBarProps> = (props) => {
+export const Sidebar: FC<SidebarProps> = (props) => {
     const { className } = props;
     const [collapsed, setCollapsed] = useState(false);
 

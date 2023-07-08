@@ -1,1 +1,1 @@
-export { PagerError } from './ui/PagerError';
+export { PageError } from './ui/PageError';
