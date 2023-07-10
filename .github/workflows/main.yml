@@ -2,9 +2,9 @@ name: linting, testing, building
 run-name: ${{ github.actor }} is learning GitHub Actions
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 jobs:
   pipeline:
     runs-on: ubuntu-latest
@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm install
+        run: rm -rf node_modules && yarn install --frozen-lockfile
       - name: build production project
         run: npm run build:prod
       - name: linting typescript
