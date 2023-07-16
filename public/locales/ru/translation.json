@@ -6,5 +6,7 @@
   "Main": "Главная",
   "About us": "О сайте",
   "ShortLang": "Ру",
-  "Sign in": "Войти"
+  "Sign in": "Войти",
+  "enter username": "Введите имя пользователя",
+  "enter password": "Введите пароль"
 }

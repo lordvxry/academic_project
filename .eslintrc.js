@@ -43,7 +43,9 @@ module.exports = {
         'react/display-name': 'off',
         '@typescript-eslint/prefer-includes': 'off',
         'react-hooks/rules-of-hooks': 'error',
-        'react-hooks/exhaustive-deps': 'error'
+        'react-hooks/exhaustive-deps': 'error',
+        'promise/param-names': 'off',
+        'react/prop-types': 'off'
     },
     overrides: [
         {
