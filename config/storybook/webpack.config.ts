@@ -3,14 +3,16 @@ import { BuildPath } from '../build/types/config';
 import path from 'path';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 
-export default ({ config }: { config: webpack.Configuration }) => {
+export default ({ config, mode }: { config: webpack.Configuration, mode: 'DEVELOPMENT' | 'PRODUCTION' }) => {
+    const isDev = mode === 'DEVELOPMENT';
+
     const paths: BuildPath = {
         build: '',
         html: '',
         entry: '',
         src: path.resolve(__dirname, '..', '..', 'src')
     };
-    config.resolve.modules.push(paths.src);
+    config.resolve.modules = [paths.src, 'node_modules'];
     config.resolve.extensions.push('.ts', '.tsx');
 
     if (config.module?.rules) {
@@ -27,7 +29,14 @@ export default ({ config }: { config: webpack.Configuration }) => {
         test: /\.svg$/,
         use: ['@svgr/webpack']
     });
-    config.module.rules.push(buildCssLoader(true));
+
+    config.module.rules.push(buildCssLoader(isDev));
+
+    config.plugins.push(
+        new webpack.DefinePlugin({
+            _IS_DEV_: JSON.stringify(isDev)
+        })
+    );
 
     return config;
 };
