@@ -10,5 +10,6 @@
   "enter username": "Enter username",
   "enter password": "Enter password",
   "Auth form": "Auth form",
-  "You have entered an incorrect login or password": "You have entered an incorrect login or password"
+  "You have entered an incorrect login or password": "You have entered an incorrect login or password",
+  "Exit": "Exit"
 }

@@ -34,7 +34,12 @@ export const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
     return (
         <div className={classNames(cls.LoginForm, {}, [className])}>
             <Text title={t('Auth form')}/>
-            {error && <Text text={error} theme={TextTheme.ERROR}/>}
+            {error && (
+                <Text
+                    text={t('You have entered an incorrect login or password')}
+                    theme={TextTheme.ERROR}
+                />
+            )}
             <Input
                 placeholder={t('enter username')}
                 className={cls.input}
