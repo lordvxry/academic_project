@@ -24,7 +24,7 @@ export const Dark = Template.bind({});
 
 Dark.args = {
     isOpen: true,
-    children: 'Text'
+    children: 'SomeText'
 };
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
