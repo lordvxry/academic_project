@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import { BuildPath } from '../build/types/config';
 import path from 'path';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 export default ({ config, mode }: { config: webpack.Configuration, mode: 'DEVELOPMENT' | 'PRODUCTION' }) => {
     const isDev = mode === 'DEVELOPMENT';
@@ -35,6 +36,10 @@ export default ({ config, mode }: { config: webpack.Configuration, mode: 'DEVELO
     config.plugins.push(
         new webpack.DefinePlugin({
             _IS_DEV_: JSON.stringify(isDev)
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'css/[name].[contenthash:8].css',
+            chunkFilename: 'css/[name].[contenthash:8].css'
         })
     );
 
