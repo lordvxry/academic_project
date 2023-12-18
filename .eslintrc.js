@@ -45,7 +45,9 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
         'promise/param-names': 'off',
-        'react/prop-types': 'off'
+        'react/prop-types': 'off',
+        '@typescript-eslint/no-dynamic-delete': 'off',
+        '@typescript-eslint/ban-ts-comment': 'off'
     },
     overrides: [
         {
