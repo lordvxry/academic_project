@@ -12,6 +12,15 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Vladimir",
+    "lastname": "Smolin",
+    "age": 27,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Tomsk",
+    "username": "admin",
+    "avatar": "https://cdn5.vectorstock.com/i/1000x1000/07/39/man-avatar-profile-view-vector-22890739.jpg"
+  }
 }
  

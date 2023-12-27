@@ -31,21 +31,6 @@
     flex-direction: column;
 }
 
-.item {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.link {
-    margin-left: 10px;
-}
-
-.icon {
-    opacity: 1;
-    fill: var(--secondary-color);
-}
-
 .collapsed {
     width: var(--sidebar-width-collapsed);
 
